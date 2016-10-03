@@ -1,0 +1,34 @@
+\RequirePackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\RequirePackage[utf8]{inputenc}
+\fi
+
+\RequirePackage{newunicodechar}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{%
+  \newcommand{\uspaceTexOrPdfString}[2]{\texorpdfstring{#1}{#2}}%
+}{%
+  \newcommand{\uspaceTexOrPdfString}[2]{#1}%
+}
+\makeatother
+
+% zero width space
+\newunicodechar{​}{\hspace{0pt}}
+
+% narrow no-break space
+\newunicodechar{ }{\,}
+
+% non-breaking space
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\relax
+\else % if !pdftex
+\newunicodechar{ }{~}
+\fi
+
+% soft hyphen
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+\relax
+\else % if !pdftex
+\newunicodechar{­}{\-}
+\fi
