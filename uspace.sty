@@ -1,17 +1,24 @@
+% LaTeX package that defines meanings to several different Unicode space
+% characters.
+%
+% © 2016 Václav Haisman
+% 
+%% This program can be redistributed and/or modified under the terms of the
+%% MIT license. See LICENSE file.
+%
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+
+\ProvidesPackage{uspace}
+[2016/10/04 v0.01 LaTeX package that defines meanings to several different
+Unicode space characters.]
+
 \RequirePackage{ifxetex,ifluatex}
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
 \RequirePackage[utf8]{inputenc}
 \fi
 
 \RequirePackage{newunicodechar}
-
-\makeatletter
-\@ifpackageloaded{hyperref}{%
-  \newcommand{\uspaceTexOrPdfString}[2]{\texorpdfstring{#1}{#2}}%
-}{%
-  \newcommand{\uspaceTexOrPdfString}[2]{#1}%
-}
-\makeatother
 
 % zero width space
 \newunicodechar{​}{\hspace{0pt}}
@@ -41,7 +48,7 @@
 \newunicodechar{ }{\quad}
 \newunicodechar{ }{\quad}
 
-% tree-per-em space
+% three-per-em space
 \newunicodechar{ }{\hspace{0.3333333333333em}}
 
 % four-per-em space
@@ -61,3 +68,8 @@
 
 % hair space
 \newunicodechar{ }{\hspace{0.0833333333333em}}
+
+\endinput
+
+%%
+%% End of file `uspace.sty'.

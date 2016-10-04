@@ -1,8 +1,19 @@
 \documentclass{article}
 \usepackage{lmodern}
+\usepackage{ifluatex}
+\ifnum 0\ifluatex 1\fi=1 % if LuaLaTeX
+\usepackage{luatex85}
+\fi
 \usepackage[a6paper]{geometry}
 \usepackage{parskip}
-%\usepackage[]{hyperref}
+\usepackage[para,online,flushleft]{threeparttable}
+\usepackage{array}
+\PassOptionsToPackage{unicode}{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  hidelinks=true,
+  breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
 \usepackage{uspace}
 
 %\setlength{\emergencystretch}{3em}  % prevent overfull lines
@@ -90,7 +101,7 @@ Telephone number example for Czechia: +420 123 456 789
 \section{\shy{}}
 \expl{Sometimes, text might come with words pre-​hyphenated using \shy{}
   character. Let's use the name `Kurremkarmerruk', name of Master Namer from
-  Earthsee novels by Ursula K.\ Le~Guin, as an example here. Without manually
+  Earthsea novels by Ursula K.\ Le~Guin, as an example here. Without manually
   inserted \shy{}, it will be hyphenated but it will overflow hbox slightly:}
 
 The name of the Master Namer is `Kurremkarmerruk'.
@@ -100,18 +111,23 @@ The name of the Master Namer is `Kurremkarmerruk'.
 
 The name of the Master Namer is `Kur­rem­kar­mer­ruk'.
 
-\expl{Note: I claim no correctness of the above hypenation of the name. This
+\expl{Note: I claim no correctness of the above hyphenation of the name. This
   is purely just an example.}
 
 \pagebreak
 
 \section{en, em and other spaces}
 
-\begin{tabular}[c]{l | p{0.666\textwidth}}
+\expl{Unicode contains several more space characters, some of which are shown in
+the following table:}
+
+\begin{center}
+\begin{threeparttable}
+\begin{tabular}[c]{l | >{\raggedright}p{0.666\textwidth}}
   a b c & \expl{\emspaceC{}}\tabularnewline
-  a b c & \expl{\emquad{} is cannonically equivalent to \emspaceC{}}\tabularnewline
+  a b c & \expl{\emquad{} is canonically equivalent{\tnote{i} } to \emspaceC{}}\tabularnewline
   a b c & \expl{\enspaceC{}}\tabularnewline
-  a b c & \expl{\enquad{} is cannonically equivalent to \enspaceC{}}\tabularnewline
+  a b c & \expl{\enquad{} is canonically equivalent{\tnote{i} } to \enspaceC{}}\tabularnewline
   a b c & \expl{\threePerEm{}}\tabularnewline
   a b c & \expl{\fourPerEm{}}\tabularnewline
   a b c & \expl{\sixPerEm{}}\tabularnewline
@@ -121,5 +137,13 @@ The name of the Master Namer is `Kur­rem­kar­mer­ruk'.
   a b c & \expl{\hairsp{}}\tabularnewline
   abc   & \expl{no spaces, for comparison}\tabularnewline
 \end{tabular}
+\begin{tablenotes}
+\item[\expl{i}] \expl{\footnotesize See \url{http://unicode.org/notes/tn5/}
+    for explanation of the term.}
+\end{tablenotes}
+\end{threeparttable}
+\end{center}
+
+\pagebreak
 
 \end{document}
