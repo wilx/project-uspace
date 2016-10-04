@@ -11,13 +11,14 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \usepackage{bookmark}
 \hypersetup{
-  hidelinks=true,
-  breaklinks=true}
+  hidelinks,
+  breaklinks}
 \urlstyle{same}  % don't use monospace font for urls
 \usepackage{uspace}
 
+
 %\setlength{\emergencystretch}{3em}  % prevent overfull lines
-\DeclareRobustCommand{\expl}[1]{{\sffamily #1}}
+\DeclareRobustCommand{\expl}[1]{\textsf{#1}}
 \newcommand{\zwsp}{\textsc{zero width space}}
 \newcommand{\nnbsp}{\textsc{narrow no-break space}}
 \newcommand{\nbsp}{\textsc{non-breaking space}}

@@ -1,0 +1,118 @@
+\documentclass[paper=B5,DIV=calc,parskip=half]{scrartcl}
+\usepackage{ifluatex}
+
+\usepackage{fontspec}
+%\defaultfontfeatures{Ligatures={TeX,Common},Scale=MatchLowercase}
+\setmainfont[]{Charis SIL}
+\setsansfont[Ligatures={TeX,Common}, Scale=MatchLowercase]{TeX Gyre Heros}
+\setmonofont[Ligatures=,Scale=MatchLowercase]{DejaVu Sans Mono}
+
+\usepackage{listings}
+\usepackage{enumitem}
+%\usepackage{enumitem-zref}
+\usepackage{polyglossia}
+\setmainlanguage[]{english}
+
+\usepackage{uspace}
+\usepackage[autostyle]{csquotes}
+
+\author{Václav Haisman\texorpdfstring{%
+    \\{\small\href{mailto:vhaisman+uspace@gmail.com?subject=[uspace]}{vhaisman@gmail.com}}}{}}
+\date{\today}
+\title{\texttt{uspace} user manual}
+
+\PassOptionsToPackage{unicode}{hyperref}
+\usepackage{bookmark}
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks,
+  linkcolor={red!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black},
+  breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+
+\usepackage{multicol}
+\usepackage{microtype}
+\usepackage{metalogo}
+
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+
+\lstdefinestyle{myLatexStyle}{
+  language=[LaTeX]{Tex},
+  basicstyle=\ttfamily
+}
+
+\lstset{style=myLatexStyle}
+
+\newcommand{\zwsp}{\textsc{zero width space}}
+\newcommand{\nnbsp}{\textsc{narrow no-break space}}
+\newcommand{\nbsp}{\textsc{non-breaking space}}
+\newcommand{\shy}{\textsc{soft hyphen}}
+\newcommand{\enquad}{\textsc{en quad}}
+\newcommand{\enspaceC}{\textsc{en space}}
+\newcommand{\emquad}{\textsc{em quad}}
+\newcommand{\emspaceC}{\textsc{em space}}
+\newcommand{\threePerEm}{\textsc{three-per-em space}}
+\newcommand{\fourPerEm}{\textsc{four-per-em space}}
+\newcommand{\sixPerEm}{\textsc{six-per-em space}}
+\newcommand{\figuresp}{\textsc{figure space}}
+\newcommand{\punctsp}{\textsc{punctuation space}}
+\newcommand{\thinsp}{\textsc{thin space}}
+\newcommand{\hairsp}{\textsc{hair space}}
+
+\begin{document}
+\begin{titlepage}
+  \maketitle
+\end{titlepage}
+
+\tableofcontents
+
+\section{Introduction}%
+%
+This \LaTeX{} package gives useful meaning to various Unicode space
+characters so that they fulfill their intended function when used in \LaTeX{}
+source. It uses \lstinline|\newunicodechar| macro to do it.
+
+Here is a list of the implemented characters
+  and their implementations:\nobreak%
+\begin{labeling}[\quad]{\nnbsp{}}
+\item[\zwsp] \lstinline|\hspace{0pt}|
+\item[\nnbsp] \lstinline|\leavevmode\,|
+\item[\nbsp{\footnotemark[1]}] \lstinline|~|
+\item[\shy{\footnotemark[1]}] \lstinline|\-|
+\item[\emquad{\footnotemark[2]}] \lstinline|\quad|
+\item[\emspaceC{\footnotemark[2]}] \lstinline|\quad|
+\item[\enquad{\footnotemark[3]}] \lstinline|\enskip|
+\item[\enspaceC{\footnotemark[3]}] \lstinline|\enskip|
+\item[\threePerEm] \lstinline|\hspace{0.3333333333333em}|
+\item[\fourPerEm] \lstinline|\hspace{0.25em}|
+\item[\sixPerEm] \lstinline|\hspace{0.1666666666666em}|
+\item[\figuresp] \lstinline|\leavevmode\hphantom{0}|
+\item[\punctsp] \lstinline|\leavevmode\hphantom{.}|
+\item[\thinsp] \lstinline|\leavevmode\,\linebreak[0]|
+\item[\hairsp] \lstinline|\hspace{0.0833333333333em}|
+\footnotetext[1]{This already defined for pdf\LaTeX{} because we use
+  \lstinline|inputenc| with \lstinline|utf8| option when compiling with
+  pdf\LaTeX{}, therefore this is only defined for \LuaLaTeX{} and
+  \XeLaTeX{}.}
+\footnotetext[2]{According to Unicode, these two are canonically
+  equivalent. See \url{http://unicode.org/notes/tn5/}
+  for explanation of the term.}
+\footnotetext[3]{These two are also canonically equivalent. See previous
+  footnote.}
+\end{labeling}
+
+\section{History}%
+%
+This package would not be what it is without help and comments from people of
+\href{http://chat.stackexchange.com/rooms/41/tex-latex-and-friends}{\TeX{},
+  \LaTeX{} and Friends} StackExchange chat room and the
+\href{http://tex.stackexchange.com/}{\TeX.SE} site itself.
+
+\begin{description}[style=nextline, labelwidth=4.5em, leftmargin=!,
+  labelindent=0em]
+  \item[\texttt{v0.01}] First published version of this package.
+\end{description}
+
+\end{document}
