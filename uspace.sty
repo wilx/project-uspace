@@ -17,7 +17,7 @@
 \newunicodechar{​}{\hspace{0pt}}
 
 % narrow no-break space
-\newunicodechar{ }{\,}
+\newunicodechar{ }{\leavevmode\,}
 
 % non-breaking space
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -32,3 +32,32 @@
 \else % if !pdftex
 \newunicodechar{­}{\-}
 \fi
+
+% en quad and en space
+\newunicodechar{ }{\enskip}
+\newunicodechar{ }{\enskip}
+
+% em quad and em space
+\newunicodechar{ }{\quad}
+\newunicodechar{ }{\quad}
+
+% tree-per-em space
+\newunicodechar{ }{\hspace{0.3333333333333em}}
+
+% four-per-em space
+\newunicodechar{ }{\hspace{0.25em}}
+
+% six-per-em space
+\newunicodechar{ }{\hspace{0.1666666666666em}}
+
+% figure space
+\newunicodechar{ }{\leavevmode\hphantom{0}}
+
+% punctuation space
+\newunicodechar{ }{\leavevmode\hphantom{.}}
+
+% thin space
+\newunicodechar{ }{\leavevmode\,\linebreak[0]}
+
+% hair space
+\newunicodechar{ }{\hspace{0.0833333333333em}}

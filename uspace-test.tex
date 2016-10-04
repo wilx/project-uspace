@@ -11,6 +11,17 @@
 \newcommand{\nnbsp}{\textsc{narrow no-break space}}
 \newcommand{\nbsp}{\textsc{non-breaking space}}
 \newcommand{\shy}{\textsc{soft hyphen}}
+\newcommand{\enquad}{\textsc{en quad}}
+\newcommand{\enspaceC}{\textsc{en space}}
+\newcommand{\emquad}{\textsc{em quad}}
+\newcommand{\emspaceC}{\textsc{em space}}
+\newcommand{\threePerEm}{\textsc{three-per-em space}}
+\newcommand{\fourPerEm}{\textsc{four-per-em space}}
+\newcommand{\sixPerEm}{\textsc{six-per-em space}}
+\newcommand{\figuresp}{\textsc{figure space}}
+\newcommand{\punctsp}{\textsc{punctuation space}}
+\newcommand{\thinsp}{\textsc{thin space}}
+\newcommand{\hairsp}{\textsc{hair space}}
 
 \overfullrule=0.5em
 
@@ -20,8 +31,8 @@
 
 \expl{\LaTeX{} does not hyphenate word after solidus (forward slash) in
   compounds like `input/output'. Inserting \zwsp{} after the solidus in such
-  compound forces LaTeX to consider the compound to be two words and thus it
-  will use the usual line breaking algorithm for the second word of the
+  compound forces \LaTeX{} to consider the compound to be two words and thus
+  it will use the usual line breaking algorithm for the second word of the
   compound. The following few lines are testing behaviour \emph{without}
   \zwsp{} inserted:}
 
@@ -79,7 +90,7 @@ Telephone number example for Czechia: +420 123 456 789
 \section{\shy{}}
 \expl{Sometimes, text might come with words pre-​hyphenated using \shy{}
   character. Let's use the name `Kurremkarmerruk', name of Master Namer from
-  Earthsee novels by Ursula K.\ Le Guin, as an example here. Without manually
+  Earthsee novels by Ursula K.\ Le~Guin, as an example here. Without manually
   inserted \shy{}, it will be hyphenated but it will overflow hbox slightly:}
 
 The name of the Master Namer is `Kurremkarmerruk'.
@@ -93,5 +104,22 @@ The name of the Master Namer is `Kur­rem­kar­mer­ruk'.
   is purely just an example.}
 
 \pagebreak
+
+\section{en, em and other spaces}
+
+\begin{tabular}[c]{l | p{0.666\textwidth}}
+  a b c & \expl{\emspaceC{}}\tabularnewline
+  a b c & \expl{\emquad{} is cannonically equivalent to \emspaceC{}}\tabularnewline
+  a b c & \expl{\enspaceC{}}\tabularnewline
+  a b c & \expl{\enquad{} is cannonically equivalent to \enspaceC{}}\tabularnewline
+  a b c & \expl{\threePerEm{}}\tabularnewline
+  a b c & \expl{\fourPerEm{}}\tabularnewline
+  a b c & \expl{\sixPerEm{}}\tabularnewline
+  a b c & \expl{\figuresp{}}\tabularnewline
+  a b c & \expl{\punctsp{}}\tabularnewline
+  a b c & \expl{\thinsp{}}\tabularnewline
+  a b c & \expl{\hairsp{}}\tabularnewline
+  abc   & \expl{no spaces, for comparison}\tabularnewline
+\end{tabular}
 
 \end{document}
