@@ -83,22 +83,22 @@ repository.
 
 Here is a list of the implemented characters
 and their implementations:\nobreak%
-\begin{labeling}[\quad]{\nnbsp{}}
-\item[\zwsp] \lstinline|\hspace{0pt}|
-\item[\nnbsp] \lstinline|\leavevmode\,|
-\item[\nbsp{\footnotemark[1]}] \lstinline|~|
-\item[\shy{\footnotemark[1]}] \lstinline|\-|
-\item[\emquad{\footnotemark[2]}] \lstinline|\quad|
-\item[\emspaceC{\footnotemark[2]}] \lstinline|\quad|
-\item[\enquad{\footnotemark[3]}] \lstinline|\enskip|
-\item[\enspaceC{\footnotemark[3]}] \lstinline|\enskip|
-\item[\threePerEm] \lstinline|\hspace{0.3333333333333em}|
-\item[\fourPerEm] \lstinline|\hspace{0.25em}|
-\item[\sixPerEm] \lstinline|\hspace{0.1666666666666em}|
-\item[\figuresp] \lstinline|\leavevmode\hphantom{0}|
-\item[\punctsp] \lstinline|\leavevmode\hphantom{.}|
-\item[\thinsp] \lstinline|\leavevmode\,\linebreak[0]|
-\item[\hairsp] \lstinline|\hspace{0.0833333333333em}|
+\begin{labeling}[\quad]{\nnbsp{} (\texttt{U+202F})}
+\item[\zwsp{} (\texttt{U+200B})] \lstinline|\hspace{0pt}|
+\item[\nnbsp{} (\texttt{U+202F})] \lstinline|\leavevmode\,|
+\item[\nbsp{\footnotemark[1]} (\texttt{U+00A0})] \lstinline|~|
+\item[\shy{\footnotemark[1]} (\texttt{U+00AD})] \lstinline|\-|
+\item[\emquad{\footnotemark[2]} (\texttt{U+2001})] \lstinline|\quad|
+\item[\emspaceC{\footnotemark[2]} (\texttt{U+2001})] \lstinline|\quad|
+\item[\enquad{\footnotemark[3]} (\texttt{U+2000})] \lstinline|\enskip|
+\item[\enspaceC{\footnotemark[3]} (\texttt{U+2000})] \lstinline|\enskip|
+\item[\threePerEm{} (\texttt{U+2004})] \lstinline|\hspace{0.3333333333333em}|
+\item[\fourPerEm{} (\texttt{U+2005})] \lstinline|\hspace{0.25em}|
+\item[\sixPerEm{} (\texttt{U+2006})] \lstinline|\hspace{0.1666666666666em}|
+\item[\figuresp{} (\texttt{U+2007})] \lstinline|\leavevmode\hphantom{0}|
+\item[\punctsp{} (\texttt{U+2008})] \lstinline|\leavevmode\hphantom{.}|
+\item[\thinsp{} (\texttt{U+2009})] \lstinline|\leavevmode\,\linebreak[0]|
+\item[\hairsp{} (\texttt{U+200A})] \lstinline|\hspace{0.0833333333333em}|
 \end{labeling}
 \footnotetext[1]{This already defined for pdf\LaTeX{} because we use
   \lstinline|inputenc| with \lstinline|utf8| option when compiling with
