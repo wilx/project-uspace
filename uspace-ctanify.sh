@@ -5,7 +5,9 @@ set -e
 rm -f uspace.pdf || true
 rm -f uspace-test.pdf || true
 
-latexmk -gg -xelatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
+latexmk -gg -pdf -jobname=uspace-test-pdflatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
+latexmk -gg -xelatex -jobname=uspace-test-xelatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
+latexmk -gg -lualatex -jobname=uspace-test-lualatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
 
 latexmk -gg -lualatex -interaction=nonstopmode uspace.tex >uspace.tex.output 2>&1 </dev/null &
 
@@ -23,12 +25,14 @@ LATEXDIR=tex/latex/uspace
 
 TEMP_DIR=`mktemp -d -p "$PWD"`
 read -d '' CTANIFY_MAP <<EOF || true
-           uspace.sty=$LATEXDIR 
-           README.md=$DOCDIR 
-           LICENSE=$DOCDIR 
-           uspace-test.tex=$DOCDIR 
-           uspace-test.pdf=$DOCDIR 
-           uspace.tex=$DOCDIR 
+           uspace.sty=$LATEXDIR
+           README.md=$DOCDIR
+           LICENSE=$DOCDIR
+           uspace-test.tex=$DOCDIR
+           uspace-test-pdflatex.pdf=$DOCDIR
+           uspace-test-xelatex.pdf=$DOCDIR
+           uspace-test-lualatex.pdf=$DOCDIR
+           uspace.tex=$DOCDIR
            uspace.pdf=$DOCDIR
            uspace-ctanify.sh=$DOCDIR
 EOF
@@ -50,7 +54,7 @@ ROOT_DIR="$PWD"
     ctanify --pkgname=uspace $CTANIFY_MAP
     mv -vf uspace.tar.gz "$ROOT_DIR"
 )
-        
+
 tar tvvzf uspace.tar.gz
 
 rm -rf "$TEMP_DIR"
