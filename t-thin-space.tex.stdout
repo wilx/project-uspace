@@ -1,0 +1,90 @@
+Latexmk: applying rule 'pdflatex'...
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+(./t-thin-space.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/size10.clo)) (./uspace.sty
+(/home/wilx/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/home/wilx/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty)
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/t1enc.dfu)
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/home/wilx/texlive/2016/texmf-dist/tex/latex/newunicodechar/newunicodechar.sty
+))
+(./t-thin-space.aux)
+\openout1 = `t-thin-space.aux'.
+
+
+Completed box being shipped out [1]
+\vbox(633.0+0.0)x407.0
+.\glue 16.0
+.\vbox(617.0+0.0)x345.0, shifted 62.0
+..\vbox(12.0+0.0)x345.0, glue set 12.0fil
+...\glue 0.0 plus 1.0fil
+...\hbox(0.0+0.0)x345.0
+..\glue 25.0
+..\glue(\lineskip) 0.0
+..\vbox(550.0+0.0)x345.0, glue set 521.63875fil
+...\write-{}
+...\glue(\topskip) 0.0
+...\hbox(16.65277+11.65277)x345.0, glue set 228.33328fil
+....\hbox(0.0+0.0)x15.0
+....\mathon
+....\vbox(16.65277+11.65277)x101.66672
+.....\hbox(4.30554+0.0)x101.66672, glue set - 0.21498
+......\hbox(0.0+0.0)x0.0
+......\hbox(1.0+0.0)x45.0
+.......\rule(1.0+0.0)x45.0
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\glue 3.33333 plus 1.66666 minus 1.11111
+......\hbox(1.0+0.0)x45.2
+.......\rule(1.0+0.0)x45.2
+......\OT1/cmr/m/n/10 x
+......\penalty 0
+......\glue(\rightskip) 0.0
+.....\penalty 300
+.....\glue(\baselineskip) 7.69446
+.....\hbox(4.30554+1.94444)x101.66672, glue set 96.38892fil
+......\OT1/cmr/m/n/10 y
+......\penalty 10000
+......\glue(\parfillskip) 0.0 plus 1.0fil
+......\glue(\rightskip) 0.0
+.....\glue(\parskip) 0.0
+.....\glue(\baselineskip) 9.05556
+.....\hbox(1.0+0.0)x101.66672
+......\hbox(0.0+0.0)x0.0
+......\hbox(1.0+0.0)x101.66672
+.......\rule(1.0+0.0)x101.66672
+......\hbox(0.0+0.0)x0.0, glue set - 0.1fil
+.......\hbox(0.0+0.0)x0.1
+........\hbox(24.0+0.0)x0.1
+.........\rule(24.0+0.0)x0.1
+.......\glue 0.0 plus 1.0fil minus 1.0fil
+......\penalty 10000
+......\glue(\parfillskip) 0.0 plus 1.0fil
+......\glue(\rightskip) 0.0
+....\mathoff
+....\penalty 10000
+....\glue(\parfillskip) 0.0 plus 1.0fil
+....\glue(\rightskip) 0.0
+...\glue 0.0 plus 1.0fil
+...\glue 0.0
+...\glue 0.0 plus 0.0001fil
+..\glue(\baselineskip) 23.55556
+..\hbox(6.44444+0.0)x345.0, glue set 170.0fil
+...\glue 0.0 plus 1.0fil
+...\OT1/cmr/m/n/10 1
+...\glue 0.0 plus 1.0fil
+
+{/home/wilx/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(./t-thin-space.aux) )</home/wilx/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb>
+Output written on t-thin-space.pdf (1 page, 9051 bytes).
+Transcript written on t-thin-space.log.
+Latexmk: All targets (t-thin-space.pdf) are up-to-date
