@@ -23,12 +23,13 @@
     \\{\small\href{mailto:vhaisman+uspace@gmail.com?subject=[uspace]}{vhaisman@gmail.com}}}{}}
 \date{\today}
 \title{\texttt{uspace} user manual}
-\subtitle{v0.02}
+\subtitle{v0.03}
 
 \usepackage{xcolor}
 \usepackage{multicol}
 \usepackage{microtype}
 \usepackage{metalogo}
+\usepackage{hologo}
 
 \PassOptionsToPackage{unicode}{hyperref}
 \usepackage{bookmark}
@@ -96,13 +97,13 @@ and their implementations:\nobreak%
 \item[\fourPerEm{} (\texttt{U+2005})] \lstinline|\hspace{0.25em}|
 \item[\sixPerEm{} (\texttt{U+2006})] \lstinline|\hspace{0.16667em}|
 \item[\figuresp{} (\texttt{U+2007})] \lstinline|\leavevmode\hphantom{0}|
-\item[\punctsp{} (\texttt{U+2008})] \lstinline|\leavevmode\hphantom{.}|
-\item[\thinsp{} (\texttt{U+2009})] \lstinline|\leavevmode\,\linebreak[0]|
+\item[\punctsp{} (\texttt{U+2008})] \lstinline|\hspace{\fontcharwd \font `\,}|
+\item[\thinsp{} (\texttt{U+2009})] \lstinline|\leavevmode\allowbreak\,|
 \item[\hairsp{} (\texttt{U+200A})] \lstinline|\hspace{0.08333em}|
 \end{labeling}
-\footnotetext[1]{This already defined for pdf\LaTeX{} because we use
+\footnotetext[1]{This already defined for \hologo{pdfLaTeX} because we use
   \lstinline|inputenc| with \lstinline|utf8| option when compiling with
-  pdf\LaTeX{}, therefore this is only defined for \LuaLaTeX{} and
+  \hologo{pdfLaTeX}, therefore this is only defined for \LuaLaTeX{} and
   \XeLaTeX{}.}
 \footnotetext[2]{According to Unicode, these two are canonically
   equivalent. See \url{http://unicode.org/notes/tn5/}
@@ -120,6 +121,8 @@ This package would not be what it is without help and comments from people of
 
 \begin{description}[style=nextline, labelwidth=4.5em, leftmargin=!,
   labelindent=0em]
+  \item[\texttt{v0.03}] Change implementation for \punctsp{} and \thinsp{} to
+    fix issues with line wrapping when using these characters.
   \item[\texttt{v0.02}] Round lengths to five digits after decimal
     point. List also Unicode code point values beside character names.
   \item[\texttt{v0.01}] First published version of this package.
