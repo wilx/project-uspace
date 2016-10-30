@@ -5,17 +5,23 @@ set -e
 rm -f uspace.pdf || true
 rm -f uspace-test.pdf || true
 
-latexmk -gg -pdf -jobname=uspace-test-pdflatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
-latexmk -gg -xelatex -jobname=uspace-test-xelatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
-latexmk -gg -lualatex -jobname=uspace-test-lualatex -interaction=nonstopmode uspace-test.tex >uspace-test.tex.output 2>&1 </dev/null &
+latexmk -gg -pdf -jobname=uspace-test-pdflatex -interaction=nonstopmode uspace-test.tex >uspace-test-pdflatex.tex.output 2>&1 </dev/null &
+latexmk -gg -xelatex -jobname=uspace-test-xelatex -interaction=nonstopmode uspace-test.tex >uspace-test-xelatex.tex.output 2>&1 </dev/null &
+latexmk -gg -lualatex -jobname=uspace-test-lualatex -interaction=nonstopmode uspace-test.tex >uspace-test-lualatex.tex.output 2>&1 </dev/null &
 
 latexmk -gg -lualatex -interaction=nonstopmode uspace.tex >uspace.tex.output 2>&1 </dev/null &
 
 echo waiting for jobs to finish
 wait
 
-echo "uspace-test.tex.output:"
-cat uspace-test.tex.output
+echo "uspace-test-pdflatex.tex.output:"
+cat uspace-test-pdflatex.tex.output
+
+echo "uspace-test-pdflatex.tex.output:"
+cat uspace-test-xelatex.tex.output
+
+echo "uspace-test-pdflatex.tex.output:"
+cat uspace-test-lualatex.tex.output
 
 echo "uspace.tex.output:"
 cat uspace.tex.output

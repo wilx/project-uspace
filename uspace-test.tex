@@ -14,6 +14,7 @@
   hidelinks,
   breaklinks}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{float}
 \usepackage{uspace}
 
 
@@ -114,6 +115,44 @@ The name of the Master Namer is `Kur­rem­kar­mer­ruk'.
 
 \expl{Note: I claim no correctness of the above hyphenation of the name. This
   is purely just an example.}
+
+\pagebreak
+
+\section{\figuresp{} and \punctsp{}}
+
+\expl{\figuresp{} and \punctsp{} can be used to align numbers in tables. The
+  below table (partial table of Earth athmosphere constituents) does not use
+  either. The numbers are centered in their column.}
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{l | c}
+  Element & ppmv \tabularnewline
+  \hline
+  Nitrogen &     780,840\tabularnewline
+  Oxygen &       209,460\tabularnewline
+  Argon &          9,340\tabularnewline
+  Carbon dioxide &   400 \tabularnewline
+  Neon &               18.18
+\end{tabular}
+\end{figure}
+
+\expl{Below is the same table as above but with addition of \figuresp{} and
+  \punctsp{} to pad the numbers so that they all seem the same width to
+  \LaTeX{}:}
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{l | c}
+  Element & ppmv \tabularnewline
+  \hline
+  Nitrogen &      780,840   \tabularnewline
+  Oxygen &        209,460   \tabularnewline
+  Argon &           9,340   \tabularnewline
+  Carbon dioxide &    400   \tabularnewline
+  Neon &               18.18
+\end{tabular}
+\end{figure}
 
 \pagebreak
 
