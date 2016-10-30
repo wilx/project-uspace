@@ -57,8 +57,9 @@ ROOT_DIR="$PWD"
     setfacl -b *
     chmod +rw-x *
     chmod +x uspace-ctanify.sh
-    ctanify --pkgname=uspace $CTANIFY_MAP
-    mv -vf uspace.tar.gz "$ROOT_DIR"
+    #ctanify --pkgname=uspace $CTANIFY_MAP
+    #mv -vf uspace.tar.gz "$ROOT_DIR"
+    tar cvvzf "$ROOT_DIR/uspace.tar.gz" .
 )
 
 tar tvvzf uspace.tar.gz
