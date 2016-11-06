@@ -30,6 +30,7 @@ DOCDIR=doc/latex/uspace
 LATEXDIR=tex/latex/uspace
 
 TEMP_DIR=`mktemp -d -p "$PWD"`
+mkdir "$TEMP_DIR"/uspace
 read -d '' CTANIFY_MAP <<EOF || true
            uspace.sty=$LATEXDIR
            README.md=$DOCDIR
@@ -48,17 +49,18 @@ echo "map:" $CTANIFY_MAP
 for entry in $CTANIFY_MAP ; do
     file=${entry%=*}
     #target_dir=${entry#*=}
-    cp -v "$file" "$TEMP_DIR"
+    cp -v "$file" "$TEMP_DIR/uspace"
 done
 
 ROOT_DIR="$PWD"
 (
-    cd "$TEMP_DIR"
+    cd "$TEMP_DIR"/uspace
     setfacl -b *
     chmod +rw-x *
     chmod +x uspace-ctanify.sh
     #ctanify --pkgname=uspace $CTANIFY_MAP
     #mv -vf uspace.tar.gz "$ROOT_DIR"
+    cd ..
     tar cvvzf "$ROOT_DIR/uspace.tar.gz" .
 )
 

@@ -23,7 +23,7 @@
     \\{\small\href{mailto:vhaisman+uspace@gmail.com?subject=[uspace]}{vhaisman@gmail.com}}}{}}
 \date{\today}
 \title{\texttt{uspace} user manual}
-\subtitle{v0.03}
+\subtitle{v0.04}
 
 \usepackage{xcolor}
 \usepackage{multicol}
@@ -65,6 +65,9 @@
 \newcommand{\punctsp}{\textsc{punctuation space}}
 \newcommand{\thinsp}{\textsc{thin space}}
 \newcommand{\hairsp}{\textsc{hair space}}
+\newcommand{\linesep}{\textsc{line separator}}
+\newcommand{\nel}{\textsc{next line (nel)}}
+\newcommand{\parasep}{\textsc{paragraph separator}}
 
 \begin{document}
 \begin{titlepage}
@@ -100,6 +103,9 @@ and their implementations:\nobreak%
 \item[\punctsp{} (\texttt{U+2008})] \lstinline|\hspace{\fontcharwd \font `\,}|
 \item[\thinsp{} (\texttt{U+2009})] \lstinline|\leavevmode\allowbreak\,|
 \item[\hairsp{} (\texttt{U+200A})] \lstinline|\hspace{0.08333em}|
+\item[\linesep{} (\texttt{U+2028})] \lstinline|\newline|
+\item[\nel{} (\texttt{U+0085})] \lstinline|\newline|
+\item[\parasep{} (\texttt{U+2029})] \lstinline|\csname par\endcsname|
 \end{labeling}
 \footnotetext[1]{This already defined for \hologo{pdfLaTeX} because we use
   \lstinline|inputenc| with \lstinline|utf8| option when compiling with
@@ -121,6 +127,8 @@ This package would not be what it is without help and comments from people of
 
 \begin{description}[style=nextline, labelwidth=4.5em, leftmargin=!,
   labelindent=0em]
+  \item[\texttt{v0.04}] Add implementation for \linesep{}, \nel{}
+    and \parasep{}.
   \item[\texttt{v0.03}] Change implementation for \punctsp{} and \thinsp{} to
     fix issues with line wrapping when using these characters.
   \item[\texttt{v0.02}] Round lengths to five digits after decimal

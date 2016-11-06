@@ -10,7 +10,7 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 
 \ProvidesPackage{uspace}
-[2016/10/30 v0.03 LaTeX package that defines meanings to several different
+[2016/11/06 v0.04 LaTeX package that defines meanings to several different
 Unicode space characters.]
 
 \RequirePackage{ifxetex,ifluatex}
@@ -68,6 +68,15 @@ Unicode space characters.]
 
 % hair space
 \newunicodechar{ }{\hspace{0.08333em}}
+
+% line separator
+\newunicodechar{ }{\newline}
+
+% next line (NEL)
+\newunicodechar{}{\newline}
+
+% paragraph separator
+\newunicodechar{ }{\csname par\endcsname}
 
 \endinput
 
