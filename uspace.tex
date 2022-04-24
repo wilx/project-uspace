@@ -1,3 +1,4 @@
+\PassOptionsToPackage{unicode}{hyperref}
 \documentclass[paper=B5,DIV=calc,parskip=half]{scrartcl}
 \usepackage{ifluatex}
 \ifluatex
@@ -5,8 +6,7 @@
 \fi
 
 \usepackage{fontspec}
-%\defaultfontfeatures{Ligatures={TeX,Common},Scale=MatchLowercase}
-\setmainfont[]{Charis SIL}
+\setmainfont[Ligatures={TeX,Common}]{Charis SIL}
 \setsansfont[Ligatures={TeX,Common}, Scale=MatchLowercase]{TeX Gyre Heros}
 \setmonofont[Ligatures=,Scale=MatchLowercase]{DejaVu Sans Mono}
 
@@ -23,7 +23,7 @@
     \\{\small\href{mailto:vhaisman+uspace@gmail.com?subject=[uspace]}{vhaisman@gmail.com}}}{}}
 \date{\today}
 \title{\texttt{uspace} user manual}
-\subtitle{v0.04}
+\subtitle{v0.05}
 
 \usepackage{xcolor}
 \usepackage{multicol}
@@ -31,7 +31,6 @@
 \usepackage{metalogo}
 \usepackage{hologo}
 
-\PassOptionsToPackage{unicode}{hyperref}
 \usepackage{bookmark}
 \hypersetup{
   colorlinks,
@@ -40,6 +39,8 @@
   urlcolor={blue!80!black},
   breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{footnotehyper}
+\makesavenoteenv{labeling}
 
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 
@@ -129,6 +130,7 @@ This package would not be what it is without help and comments from people of
 
 \begin{description}[style=nextline, labelwidth=4.5em, leftmargin=!,
   labelindent=0em]
+  \item[\texttt{v0.05}] Add implementation for \medmathsp{}.
   \item[\texttt{v0.04}] Add implementation for \linesep{}, \nel{}
     and \parasep{}.
   \item[\texttt{v0.03}] Change implementation for \punctsp{} and \thinsp{} to
