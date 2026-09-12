@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{uspace}
+
+\newcommand{\assertvertical}[1]{%
+  \ifvmode\else
+    \errmessage{#1: expected vertical mode}%
+  \fi}
+\newcommand{\assertlines}[2]{%
+  \ifnum\prevgraf=#2\relax\else
+    \errmessage{#1: expected #2 lines, got \the\prevgraf}%
+  \fi}
+
+\begin{document}
+% U+2028 and U+0085 before the first paragraph, including repetitions.
+  
+\assertvertical{Leading separators}
+
+\noindent First Second\par
+\assertlines{U+2028 in a paragraph}{2}
+ 
+\assertvertical{Separators after an explicit paragraph break}
+
+\noindent FirstSecond\par
+\assertlines{U+0085 in a paragraph}{2}
+
+\noindent Paragraph ended by a blank source line.
+
+ 
+\assertvertical{Separators after a blank source line}
+
+\noindent Paragraph ended by U+2029.  
+\assertvertical{U+2028 immediately after U+2029}
+\noindent Another paragraph ended by U+2029. 
+\assertvertical{U+0085 immediately after U+2029}
+   
+\assertvertical{Repeated separators after U+2029}
+
+\noindent First  Third\par
+\assertlines{Repeated U+2028 in a paragraph}{3}
+\noindent FirstThird\par
+\assertlines{Repeated U+0085 in a paragraph}{3}
+
+\end{document}

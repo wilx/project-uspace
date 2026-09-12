@@ -106,8 +106,8 @@ and their implementations:\nobreak%
 \item[\thinsp{} (\texttt{U+2009})] \lstinline|\leavevmode\allowbreak\,|
 \item[\hairsp{} (\texttt{U+200A})] \lstinline|\hspace{0.08333em}|
 \item[\medmathsp{} (\texttt{U+205F})] \lstinline|\hspace{0.22222em}|
-\item[\linesep{} (\texttt{U+2028})] \lstinline|\newline|
-\item[\nel{} (\texttt{U+0085})] \lstinline|\newline|
+\item[\linesep{} (\texttt{U+2028})] \lstinline|\ifvmode\else\newline\fi|
+\item[\nel{} (\texttt{U+0085})] \lstinline|\ifvmode\else\newline\fi|
 \item[\parasep{} (\texttt{U+2029})] \lstinline|\csname par\endcsname|
 \end{labeling}
 \footnotetext[1]{This already defined for \hologo{pdfLaTeX} because we use
@@ -119,6 +119,10 @@ and their implementations:\nobreak%
   for explanation of the term.}
 \footnotetext[3]{These two are also canonically equivalent. See previous
   footnote.}
+
+The \linesep{} and \nel{} characters insert a line break within a paragraph.
+They are ignored in vertical mode, including before the first paragraph
+and immediately after a \parasep{} character.
 
 
 \section{History}%

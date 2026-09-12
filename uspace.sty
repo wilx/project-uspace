@@ -72,11 +72,11 @@ Unicode space characters.]
 % Medium Mathematical Space (MMSP)
 \newunicodechar{ }{\hspace{0.22222em}}
 
-% line separator
-\newunicodechar{ }{\newline}
+% line separator: ignore it when there is no paragraph to break
+\newunicodechar{ }{\ifvmode\else\newline\fi}
 
 % next line (NEL)
-\newunicodechar{}{\newline}
+\newunicodechar{}{\ifvmode\else\newline\fi}
 
 % paragraph separator
 \newunicodechar{ }{\csname par\endcsname}
