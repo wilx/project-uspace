@@ -23,7 +23,7 @@
     \\{\small\href{mailto:vhaisman+uspace@gmail.com?subject=[uspace]}{vhaisman@gmail.com}}}{}}
 \date{\today}
 \title{\texttt{uspace} user manual}
-\subtitle{v0.05}
+\subtitle{v0.06}
 
 \usepackage{xcolor}
 \usepackage{multicol}
@@ -134,6 +134,10 @@ This package would not be what it is without help and comments from people of
 
 \begin{description}[style=nextline, labelwidth=4.5em, leftmargin=!,
   labelindent=0em]
+  \item[\texttt{v0.06}] Ignore \linesep{} and \nel{} in vertical mode,
+    including before the first paragraph and immediately after a
+    \parasep{}, instead of raising an error. Their line-breaking behaviour
+    within paragraphs is unchanged.
   \item[\texttt{v0.05}] Add implementation for \medmathsp{}.
   \item[\texttt{v0.04}] Add implementation for \linesep{}, \nel{}
     and \parasep{}.
