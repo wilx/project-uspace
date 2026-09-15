@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check release build failures without running TeX or changing the checkout."""
+"""Check release build failures and archive layout without running TeX."""
 
 import os
 from pathlib import Path
@@ -100,8 +100,14 @@ class PackagingTest(unittest.TestCase):
                     self.assertFalse(archive.exists(), "failed build created an archive")
             else:
                 with tarfile.open(archive, "r:gz") as package:
+                    # Check names as stored, including directories: a ./ entry
+                    # would make extraction restore metadata on the destination.
+                    self.assertEqual(
+                        {member.name for member in package.getmembers() if member.isdir()},
+                        {"uspace"},
+                    )
                     members = {
-                        member.name.removeprefix("./"): member
+                        member.name: member
                         for member in package.getmembers()
                         if member.isfile()
                     }
